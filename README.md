@@ -14,12 +14,12 @@
 ### Association
 - has_many :items
 - has_many :comments
-- has_one :purchase
+- has_many :user_items
 
 ## items テーブル
 |種類|Column|Type|Options|備考|
 |:----|:----|:----|:----|:----|
-|画像|||| ActiveStorage|
+|画像|||null:false| ActiveStorage|
 |商品名|item_name|string|null:false| |
 |商品説明|instruction|text|null:false| |
 |送料負担|postage|string| null:false| |
@@ -32,7 +32,7 @@
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_one :purchase
+- has_many :user_items
 
 ## comments テーブル
 |Column|Type|Options|
@@ -53,8 +53,16 @@
 |番地|address|string|null:false| |
 |建物|building_name|string| | |
 |電話番号|phone_number|integer|null:false| |
-|購入者|users_id|references |null: false, foreign_key: true| |
-|購入した商品|items_id|references|null: false, foreign_key: true| |
+|購入者| |references|null: false,foreign_key: true|
+### Association
+belongs_to :user_item
+
+## user_items テーブル
+|種類|column|Type|Options|
+|:----|:----|:----|:----|
+|user| |references|null: false,foreign_key: true|
+|item| |references|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
+- has_one :purchase
