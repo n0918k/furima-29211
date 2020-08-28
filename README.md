@@ -22,7 +22,7 @@
 |画像|||null:false| ActiveStorage|
 |商品名|name|string|null:false| |
 |商品説明|instruction|text|null:false| |
-|送料負担|postage|string| null:false| |
+|送料負担|postage|integer| null:false| |
 |価格|price|integer|null:false | |
 |カテゴリー|category|integer| null:false|Activehash|
 |発送までの日数|shipping_days|integer| null:false|Activehash|
