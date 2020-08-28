@@ -20,14 +20,15 @@
 |種類|Column|Type|Options|備考|
 |:----|:----|:----|:----|:----|
 |画像|||| ActiveStorage|
-|商品名|item_name|string| | |
-|商品説明|instruction|text| | |
-|送料負担|postage|string| | |
-|価格|price|integer| | |
-|カテゴリー|category|integer| |Activehash|
-|発送までの日数|shipping_days|integer| |Activehash|
-|状態|item_status|integer| |Activehash|
-|発送元地域|sipping_origin|integer| |Activehash|
+|商品名|item_name|string|null:false| |
+|商品説明|instruction|text|null:false| |
+|送料負担|postage|string| null:false| |
+|価格|price|integer|null:false | |
+|カテゴリー|category|integer| null:false|Activehash|
+|発送までの日数|shipping_days|integer| null:false|Activehash|
+|状態|item_status|integer| null:false|Activehash|
+|発送元地域|sipping_origin|integer| null:false|Activehash|
+|user||references |null: false, foreign_key: true||
 ### Association
 - belongs_to :user
 - has_many :comments
@@ -36,7 +37,7 @@
 ## comments テーブル
 |Column|Type|Options|
 |:----|:----|:----|
-|comment|string| |
+|comment|string|null:false |
 |users_id|references |null: false, foreign_key: true|
 |items_id|references|null: false, foreign_key: true|
 ### Association
