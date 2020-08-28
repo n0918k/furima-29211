@@ -14,7 +14,7 @@
 ### Association
 - has_many :items
 - has_many :comments
-- has_one :user_items
+- has_one :user_item
 
 ## items テーブル
 |種類|Column|Type|Options|備考|
@@ -32,7 +32,7 @@
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_one :user_items
+- has_one :user_item
 
 ## comments テーブル
 |種類|Column|Type|Options|
