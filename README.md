@@ -37,6 +37,8 @@
 |Column|Type|Options|
 |:----|:----|:----|
 |comment|string| |
+|users_id|references |null: false, foreign_key: true|
+|items_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
