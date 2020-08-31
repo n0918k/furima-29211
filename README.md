@@ -25,7 +25,7 @@
 |送料負担|postage|integer| null:false| |
 |価格|price|integer|null:false | |
 |カテゴリー|category|integer| null:false|Activehash|
-|発送までの日数|shipping_days|integer| null:false|Activehash|
+|発送までの日数|shipping_day|integer| null:false|Activehash|
 |状態|item_status|integer| null:false|Activehash|
 |発送元地域|sipping_origin|integer| null:false|Activehash|
 ||user|references |null: false, foreign_key: true||
