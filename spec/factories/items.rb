@@ -6,14 +6,13 @@ FactoryBot.define do
     association :shipping_day
     association :category
 
-    name {'あああ'}
-    instruction{'あああ'}
-    postage_id{'1'}
-    price{'500'}
-    category_id{'1'}
-    shipping_day_id{'1'}
-    item_status_id{'1'}
-    prefecture_id{'1'}
-    
+    name { 'あああ' }
+    instruction { 'あああ' }
+    postage_id { '1' }
+    price { '500' }
+    category_id { '1' }
+    shipping_day_id { '1' }
+    item_status_id { '1' }
+    prefecture_id { '1' }
   end
 end

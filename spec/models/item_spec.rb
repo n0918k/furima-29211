@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
-    @item.image = fixture_file_upload("/files/test_image.png")
+    @item.image = fixture_file_upload('/files/test_image.png')
   end
-  
+
   describe '出品できないとき' do
     it '商品名がないと出品できない' do
       @item.name = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Name can't be blank")
     end
-    
+
     it '画像がないと出品できない' do
       @item.image = nil
       @item.valid?
@@ -54,30 +54,29 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping day can't be blank")
     end
-    
+
     it '価格の情報がないと出品できないこと' do
       @item.price = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Price can't be blank")
     end
-    
+
     it '価格が299円以下だと出品できないこと' do
       @item.price = 299
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+      expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
     end
 
     it '価格が9,999,999円以上だと出品できないこと' do
-      @item.price = 10000000
+      @item.price = 10_000_000
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+      expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
     end
 
     it '価格が全角数字だと出品できないこと' do
       @item.price = '５００'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price is not a number")
+      expect(@item.errors.full_messages).to include('Price is not a number')
     end
-
   end
 end
