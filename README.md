@@ -28,6 +28,7 @@
 |発送までの日数|shipping_days|integer| null:false|Activehash|
 |状態|item_status|integer| null:false|Activehash|
 |発送元地域|sipping_origin|integer| null:false|Activehash|
+|販売状況|sold|boolean|||
 ||user|references |null: false, foreign_key: true||
 ### Association
 - belongs_to :user
