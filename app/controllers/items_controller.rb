@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :login, except: [:index, :show]
-  before_action :item_show, only: [:show, :edit]
+  before_action :item_show, only: [:show, :edit,:update]
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
+    
     if @item.valid?
       @item.update(item_params)
       redirect_to root_path
