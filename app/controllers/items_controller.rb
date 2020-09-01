@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :login, except: [:index, :show]
-  before_action :item_show, only: [:show]
+  before_action :item_show, only: [:show,:edit,]
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -11,15 +11,26 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.valid?
-      @item.save
-      redirect_to root_path
-    else
-      render 'new'
-    end
+      if @item.valid?
+        @item.save
+       redirect_to root_path
+      else
+        render 'new'
+       end
   end
 
+  def update
+    @item = Item.find(params[:id])
+     if @item.valid?
+       @item.update(item_params)
+       redirect_to root_path
+     end
+  end
+    
   def show
+  end
+
+  def edit
   end
 
   private
