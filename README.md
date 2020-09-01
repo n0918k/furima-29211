@@ -24,13 +24,6 @@
 |商品説明|instruction|text|null:false| |
 |送料負担|postage_id|integer| null:false| |
 |価格|price|integer|null:false | |
-
-
-
-
-
-
-
 |カテゴリー|category_id|integer| null:false|Activehash|
 |発送までの日数|shipping_day_id|integer| null:false|Activehash|
 |状態|item_status_id|integer| null:false|Activehash|
