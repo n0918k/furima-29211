@@ -22,13 +22,22 @@
 |画像|||null:false| ActiveStorage|
 |商品名|name|string|null:false| |
 |商品説明|instruction|text|null:false| |
-|送料負担|postage|integer| null:false| |
+|送料負担|postage_id|integer| null:false| |
 |価格|price|integer|null:false | |
-|カテゴリー|category|integer| null:false|Activehash|
-|発送までの日数|shipping_days|integer| null:false|Activehash|
-|状態|item_status|integer| null:false|Activehash|
-|発送元地域|sipping_origin|integer| null:false|Activehash|
+
+
+
+
+
+
+
+|カテゴリー|category_id|integer| null:false|Activehash|
+|発送までの日数|shipping_day_id|integer| null:false|Activehash|
+|状態|item_status_id|integer| null:false|Activehash|
+|発送元地域|prefecture_id|integer| null:false|Activehash|
 |販売状況|sold|boolean|||
+
+
 ||user|references |null: false, foreign_key: true||
 ### Association
 - belongs_to :user
@@ -49,7 +58,7 @@
 種類|Column|Type|Options|備考|
 |:----|:----|:----|:----|:----|
 |郵便番号|house_number|string|null:false|
-|都道府県|prefecture|integer|null:false|Activehash|
+|都道府県|prefecture_id|integer|null:false|Activehash|
 |市区町村|city|string|null:false| |
 |番地|address|string|null:false| |
 |建物|building_name|string| | |
