@@ -24,10 +24,15 @@
 |商品説明|instruction|text|null:false| |
 |送料負担|postage|integer| null:false| |
 |価格|price|integer|null:false | |
+
+
+
+
 |カテゴリー|category_id|integer| null:false|Activehash|
-|発送までの日数|shipping_days_id|integer| null:false|Activehash|
+|発送までの日数|shipping_day_id|integer| null:false|Activehash|
 |状態|item_status_id|integer| null:false|Activehash|
 |発送元地域|prefecture_id|integer| null:false|Activehash|
+
 ||user|references |null: false, foreign_key: true||
 ### Association
 - belongs_to :user
