@@ -12,52 +12,50 @@ RSpec.describe Item, type: :model do
       expect(@item).to be_valid
     end
 
-    it '画像があれば出品できる'do
+    it '画像があれば出品できる' do
       @item = @item.image
       expect(@item).to be_valid
     end
 
     it '商品説明があれば出品できる' do
-      @item.instruction = "aaa"
+      @item.instruction = 'aaa'
       expect(@item).to be_valid
     end
 
     it 'カテゴリーの情報があれば出品できる' do
-      @item.category_id = "1"
+      @item.category_id = '1'
       expect(@item).to be_valid
     end
 
     it '商品の状態についての情報があれば出品できる' do
-      @item.item_status_id = "2"
+      @item.item_status_id = '2'
       expect(@item).to be_valid
     end
 
     it '配送の負担についてのの情報があれば出品できる' do
-      @item.postage_id = "1"
+      @item.postage_id = '1'
       expect(@item).to be_valid
     end
 
     it '発送元の地域についての情報があれば出品できる' do
-      @item.prefecture_id = "1"
+      @item.prefecture_id = '1'
       expect(@item).to be_valid
     end
 
     it '発送までの日数についての情報があれば出品できる' do
-      @item.shipping_day_id = "1"
+      @item.shipping_day_id = '1'
       expect(@item).to be_valid
     end
 
     it '価格が300円以上であれば出品できる' do
-      @item.price = "300"
+      @item.price = '300'
       expect(@item).to be_valid
     end
 
     it '価格が9,999,999円以下であれば出品できる' do
-      @item.price = "9999999"
+      @item.price = '9999999'
       expect(@item).to be_valid
     end
-
-
   end
 
   describe '出品できないとき' do
