@@ -23,13 +23,9 @@ class ItemsController < ApplicationController
     if @item.valid?
        @item.update(item_params)
        redirect_to root_path
+    else
+      render 'edit'
     end
-  end
-
-  def show
-  end
-
-  def edit
   end
 
   private
