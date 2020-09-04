@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 
   def create
     @user_item = UserItem.new(order_params)
+     
     if @user_item.valid?
       pay_item
       @user_item.save

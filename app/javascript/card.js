@@ -16,6 +16,7 @@ const pay = () => {
 
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
+       
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
@@ -30,21 +31,12 @@ const pay = () => {
         document.getElementById("charge-form").reset();
       } 
       else {
-        
-        try {
-        } catch (CardException ) {
-          System.out.println("Status is: " + e.getCode());
-          System.out.println("Message is: " + e.getMessage());
-        } catch (InvalidRequestException e) {
-        } catch (AuthenticationException e) {
-        } catch (APIConnectionException e) {
-        } catch (PayjpException e) {
-        } catch (Exception e) {
-        }
+        document.getElementById("charge-form").submit();
+        document.getElementById("charge-form").reset();
       }
     });
     
   });
 };
 
-window.addEventListener("onclick", pay);
+window.addEventListener("load", pay);

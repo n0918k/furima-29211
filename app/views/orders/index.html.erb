@@ -30,7 +30,7 @@
       </p>
     </div>
 
-    <%= form_with model: @order, url: item_orders_path, method: :post ,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with  url: item_orders_path, method: :post ,id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
  
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
