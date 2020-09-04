@@ -22,10 +22,15 @@ RSpec.describe UserItem, type: :model do
         @user_item.address = 'あああ'
         expect(@user_item).to be_valid
       end
-      it '電話番号がハイフンなしで11桁なら登録できる' do
+      it '電話番号がハイフンなしで11桁なら購入できる' do
         @user_item.phone_number = '09012345678'
         expect(@user_item).to be_valid
       end
+      it 'カードのトークンがあれば購入できる' do
+        @user_item.token = '09012345678'
+        expect(@user_item).to be_valid
+      end
+
 
       describe '商品購入できないとき' do
         it '郵便番号が空だと購入できない' do
@@ -71,6 +76,12 @@ RSpec.describe UserItem, type: :model do
           @user_item.phone_number = '090-1234-5678'
           @user_item.valid?
           expect(@user_item.errors.full_messages).to include('Phone number is invalid')
+        end
+
+        it 'カードのトークンがないと購入できない' do
+          @user_item.token = nil
+          @user_item.valid?
+          expect(@user_item.errors.full_messages).to include("Token can't be blank")
         end
       end
     end

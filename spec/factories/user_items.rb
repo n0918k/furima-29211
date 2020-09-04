@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :user_item do
     number { '4242424242424242' }
+    token{'jhlfghsfghihilh'}
     house_number { '123-4567' }
     prefecture_id { '1' }
     city { 'aaa' }
