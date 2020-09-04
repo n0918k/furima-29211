@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :login, except: [:index, :show]
-  before_action :item_show, only: [:show, :edit,:update,:destroy]
+  before_action :item_show, only: [:show, :edit, :update, :destroy]
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
 
   def update
     if @item.valid?
-       @item.update(item_params)
-       redirect_to root_path
+      @item.update(item_params)
+      redirect_to root_path
     else
       render 'edit'
     end
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
       render 'show'
     end
   end
-  
+
   private
 
   def item_show
@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:number,:name, :image, :instruction, :postage_id, :price, :category_id, :shipping_day_id, :item_status_id, :prefecture_id, :sold).merge(user_id: current_user.id)
+    params.require(:item).permit(:number, :name, :image, :instruction, :postage_id, :price, :category_id, :shipping_day_id, :item_status_id, :prefecture_id, :sold).merge(user_id: current_user.id)
   end
 
   def login
