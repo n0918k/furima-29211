@@ -47,7 +47,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## purchases テーブル
+## orders テーブル
 種類|Column|Type|Options|備考|
 |:----|:----|:----|:----|:----|
 |郵便番号|house_number|string|null:false|
@@ -68,4 +68,4 @@ belongs_to :user_item
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one :purchase
+- has_one :order

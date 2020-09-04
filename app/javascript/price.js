@@ -9,4 +9,4 @@ function display(){
     profitSum.innerHTML = price - tax
   })
 }
-window.addEventListener('keyup',display)
+window.addEventListener('load',display)
