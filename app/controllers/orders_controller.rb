@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
 
   def sold
     @item = Item.find(params[:item_id])
-    if current_user.id == @item.user_id or item.sold == "1"
+    if current_user.id == @item.user_id or @item.sold == "1"
       redirect_to root_path 
     end
   end
