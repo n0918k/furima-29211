@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
+
     @item = Item.find(params[:item_id])
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
