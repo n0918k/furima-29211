@@ -11,7 +11,6 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :prefecture_id,          null: false
       t.boolean :sold
       t.references :user,          null: false, foreign_key: true
-      t.integer  :order_id,          null: false
       t.timestamps
     end
   end
