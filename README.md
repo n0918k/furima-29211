@@ -14,7 +14,7 @@
 ### Association
 - has_many :items
 - has_many :comments
-- has_one :user_item
+- has_many :orders
 
 ## items テーブル
 |種類|Column|Type|Options|備考|
@@ -35,7 +35,7 @@
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_one :user_item
+- has_many :orders
 
 ## comments テーブル
 |種類|Column|Type|Options|
@@ -58,14 +58,6 @@
 |電話番号|phone_number|string|null:false| |
 ||user_item|references|null: false,foreign_key: true|
 ### Association
-belongs_to :user_item
+belongs_to :user
+belongs_to :item
 
-## user_items テーブル
-|種類|column|Type|Options|
-|:----|:----|:----|:----|
-|| user|references|null: false,foreign_key: true|
-|| item|references|null: false,foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
-- has_one :order
