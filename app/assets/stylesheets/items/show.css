@@ -204,3 +204,9 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comment-items{
+  margin: 20px 0;
+  word-break:break-all;
+  width: 40vw;
+}

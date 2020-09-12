@@ -37,10 +37,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+       @comment = Comment.all
+       @comments = Comment.all
+  end
+
   private
 
   def item_show
     @item = Item.find(params[:id])
+
   end
 
   def item_params
