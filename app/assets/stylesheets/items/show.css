@@ -204,3 +204,21 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+
+.comment-a{
+  width:40vw;
+
+}
+
+
+.comment-items{
+  word-break:break-all;
+  width: 100%;
+  padding:20px;
+  background-color:white;
+  border-bottom:1px solid rgb(1, 173, 235);
+  justify-content: left;
+  text-align: left;
+  
+}
