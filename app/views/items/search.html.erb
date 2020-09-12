@@ -1,9 +1,10 @@
 <%= render "shared/header" %>
-<div class='main'>
+<div class='s-main'>
+  <div class="s-wrapper">
       <% @items.each do |item| %>
         <li class='list'>
            <%= link_to item_path(item.id) do %>
-            <div class='item-img-content'>
+            <div class='s-item-img-content'>
               <%= image_tag item.image, class: "item-img" %>
                 <% if item.sold? %>
                  <div class='sold-out'>
@@ -11,7 +12,7 @@
                  </div>
                 <% end %>
             </div>
-            <div class='item-info'>
+            <div class='s-item-info'>
                 <h3 class='item-name'>
                  <%= item.name %>
                 </h3>
@@ -26,5 +27,6 @@
         <% end %>
       <% end %>
       </li>
+    </div>
 </div>
 <%= render "shared/footer" %>

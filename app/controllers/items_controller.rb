@@ -43,14 +43,11 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(search_params)
+    @items = Item.search(params[:keyword])
   end
 
   private
 
-  def search_params
-    params.require(:item).permit(:keyword)
-  end
 
   def item_show
     @item = Item.find(params[:id])
