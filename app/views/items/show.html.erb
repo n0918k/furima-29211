@@ -92,13 +92,18 @@
      
      
   
-  
+   <div id='comment-text' class="comment-a">
   <% @comments.reverse_each do |comment| %>
   <div class= "comment-items">
-  <div id='comment-text'><%= comment.text %></div>
+ 
+  <div class="c-user-name"><%= comment.user.nickname%></div>
+
+  <div class="c-text">   <%= comment.text %></div>
+  </div>
+ <% end%>
   </div>
    
- <% end%>
+ 
   
 
 
