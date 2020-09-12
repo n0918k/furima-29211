@@ -39,10 +39,12 @@
   cursor: pointer;
   background-color: #3ccace;
   padding: 8px;
+ 
 }
 
 .search-icon {
   width: 100%;
+  
 }
 
 .nav {

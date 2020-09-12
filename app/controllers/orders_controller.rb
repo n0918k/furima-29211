@@ -7,17 +7,16 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @user_item = UserItem.new(order_params)
 
-      @user_item = UserItem.new(order_params)
-
-      if @user_item.valid?
-        pay_item
-        @user_item.save
-        redirect_to root_path
-       else
-        @item = Item.find(params[:item_id])
-        render :index
-      end
+    if @user_item.valid?
+      pay_item
+      @user_item.save
+      redirect_to root_path
+    else
+      @item = Item.find(params[:item_id])
+      render :index
+    end
   end
 
   private
@@ -28,7 +27,6 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-
     @item = Item.find(params[:item_id])
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
@@ -37,7 +35,6 @@ class OrdersController < ApplicationController
       currency: 'jpy'
     )
   end
-  private
 
   def login
     redirect_to new_user_session_path unless user_signed_in?
@@ -45,8 +42,6 @@ class OrdersController < ApplicationController
 
   def sold
     @item = Item.find(params[:item_id])
-    if current_user.id == @item.user_id or @item.sold == "1"
-      redirect_to root_path 
-    end
+    redirect_to root_path if (current_user.id == @item.user_id) || (@item.sold == '1')
   end
 end

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :login, except: [:index, :show]
+  before_action :login, except: [:index, :show, :search]
   before_action :item_show, only: [:show, :edit, :update, :destroy]
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -38,15 +38,22 @@ class ItemsController < ApplicationController
   end
 
   def show
-       @comment = Comment.all
-       @comments = @item.comments.includes(:user).order('created_at DESC')
+    @comment = Comment.all
+    @comments = @item.comments.includes(:user).order('created_at DESC')
+  end
+
+  def search
+    @items = Item.search(search_params)
   end
 
   private
 
+  def search_params
+    params.require(:item).permit(:keyword)
+  end
+
   def item_show
     @item = Item.find(params[:id])
-
   end
 
   def item_params

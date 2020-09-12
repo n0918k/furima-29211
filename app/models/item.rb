@@ -9,7 +9,6 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :order
   has_many :comments
- 
 
   with_options presence: true do
     validates :name
@@ -21,5 +20,13 @@ class Item < ApplicationRecord
     validates :shipping_day_id, numericality: { other_than: 0 }
     validates :item_status_id, numericality: { other_than: 0 }
     validates :prefecture_id, numericality: { other_than: 0 }
+  end
+
+  def self.search(search)
+    if search != ''
+      Item.where('text LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
   end
 end
