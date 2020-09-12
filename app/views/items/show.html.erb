@@ -86,22 +86,23 @@
       </p>
       <%= f.submit 'コメントする',class:"comment-btn" %>
     <% end %>
-  </div>
-
-  
-     
-     
-  
-   <div id='comment-text' class="comment-a">
+       <div id='comment-text' class="comment-a">
   <% @comments.reverse_each do |comment| %>
   <div class= "comment-items">
  
-  <div class="c-user-name"><%= comment.user.nickname%></div>
+  <div class="c-user-name"><<%= comment.user.nickname%>さん></div>
 
   <div class="c-text">   <%= comment.text %></div>
   </div>
  <% end%>
   </div>
+  </div>
+
+  
+     
+     
+  
+
    
  
   

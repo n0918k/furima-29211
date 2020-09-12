@@ -208,16 +208,17 @@
 
 .comment-a{
   width:40vw;
-  background-color:white;
-  padding:20px;
 
 }
 
 
 .comment-items{
- margin:0 auto;
   word-break:break-all;
-  width: 80%;
+  width: 100%;
+  padding:20px;
   background-color:white;
   border-bottom:1px solid rgb(1, 173, 235);
+  justify-content: left;
+  text-align: left;
+  
 }
