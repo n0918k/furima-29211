@@ -23,8 +23,16 @@ class Item < ApplicationRecord
   end
 
   def self.search(search)
-    if search != '' 
+    if search != ''
       Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
+  def self.category(category)
+    if 0 < category.to_i && category.to_i < 11
+      Item.where('category_id LIKE(?)', "%#{category}%")
     else
       Item.all
     end

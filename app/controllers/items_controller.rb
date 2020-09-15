@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :login, except: [:index, :show, :search]
+  before_action :login, except: [:index, :show, :search, :category]
   before_action :item_show, only: [:show, :edit, :update, :destroy]
+  before_action :category_set, except: [:destroy, :update]
   def index
     @items = Item.includes(:user).order('created_at DESC')
   end
@@ -46,8 +47,11 @@ class ItemsController < ApplicationController
     @items = Item.search(params[:keyword])
   end
 
-  private
+  def category
+    @items = Item.category(params[:id])
+  end
 
+  private
 
   def item_show
     @item = Item.find(params[:id])
@@ -59,5 +63,9 @@ class ItemsController < ApplicationController
 
   def login
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def category_set
+    @categories = Category.all.where.not(id: 0)
   end
 end
