@@ -1,0 +1,42 @@
+<%= render "shared/header" , locals: { categories: @categories }%>
+<div class='main'>
+
+  
+
+  <div class='s-item-contents'>
+    <ul class='s-item-lists'>
+
+      <% @items.each do |item| %>
+        <li class='s-list'>
+           <%= link_to item_path(item.id) do %>
+            <div class='s-item-img-content'>
+              <%= image_tag item.image, class: "s-item-img" %>
+                <% if item.sold? %>
+                 <div class='s-sold-out'>
+                   <span>Sold Out!!</span>
+                 </div>
+                <% end %>
+            </div>
+            <div class='s-item-info'>
+                <h3 class='s-item-name'>
+                 <%= item.name %>
+                </h3>
+            <div class='s-item-price'>
+                 <span><%= item.price %>円<br>(税込み)</span>
+            <div class='s-star-btn'>
+              <%= image_tag "star.png", class:"s-star-icon" %>
+              <span class='s-star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      </li>
+  </div>
+
+</div>
+</div>
+      <% if @items.blank?%>
+        <div class="s-error">キーワードと一致した商品はありません<div>
+    <%end%>
+<%= render "shared/footer" %>

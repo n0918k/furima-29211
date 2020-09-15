@@ -38,11 +38,12 @@
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
-  padding: 8px;
+  padding: 8px; 
 }
 
 .search-icon {
   width: 100%;
+  
 }
 
 .nav {
@@ -101,4 +102,12 @@
 .sign-up {
   text-decoration: none;
   color: #333333;
+}
+
+.hidden{
+  display: none;
+}
+
+.ca-lists{
+  height:30vh;
 }
