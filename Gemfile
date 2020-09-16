@@ -68,6 +68,8 @@ gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 gem 'payjp'
 gem "aws-sdk-s3", require: false
+gem 'font-awesome-sass', '~> 5.4.1'
+
 
 group :production do
   gem 'rails_12factor'
