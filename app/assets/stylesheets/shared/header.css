@@ -34,7 +34,8 @@
 }
 
 .search-button {
-  width: 5vh;
+  width: 5vw;
+  color:white;
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
