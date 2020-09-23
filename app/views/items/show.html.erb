@@ -29,7 +29,7 @@
       <%= link_to '削除',item_path(@item.id) , method: :delete, class:'item-destroy' %>
     <% elsif @item.sold.nil?  %>
       <%= link_to '購入画面に進む', item_orders_path(@item.id) ,class:"item-red-btn"%>
-    
+
     <% end %>
 
 
@@ -89,7 +89,7 @@
        <div id='comment-text' class="comment-a">
   <% @comments.reverse_each do |comment| %>
   <div class= "comment-items">
- 
+
   <div class="c-user-name"><<%= comment.user.nickname%>さん></div>
 
   <div class="c-text">   <%= comment.text %></div>
@@ -98,14 +98,6 @@
   </div>
   </div>
 
-  
-     
-     
-  
-
-   
- 
-  
 
 
   <div class="links">

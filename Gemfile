@@ -69,7 +69,7 @@ gem 'active_hash'
 gem 'payjp'
 gem "aws-sdk-s3", require: false
 gem 'font-awesome-sass', '~> 5.4.1'
-
+gem 'rails-i18n'
 
 group :production do
   gem 'rails_12factor'
