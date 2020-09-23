@@ -208,7 +208,8 @@
 
 .comment-a{
   width:40vw;
-
+  overflow: scroll;
+  height:50vh;
 }
 
 
@@ -220,5 +221,5 @@
   border-bottom:1px solid rgb(1, 173, 235);
   justify-content: left;
   text-align: left;
-  
+
 }

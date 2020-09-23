@@ -86,7 +86,8 @@
       </p>
       <%= f.submit 'コメントする',class:"comment-btn" %>
     <% end %>
-       <div id='comment-text' class="comment-a">
+    <p class="comment-warn"> <上が最新のコメントです> </p>
+  <div id='comment-text' class="comment-a">
   <% @comments.reverse_each do |comment| %>
   <div class= "comment-items">
 

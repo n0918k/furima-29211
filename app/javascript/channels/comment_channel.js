@@ -10,11 +10,14 @@ consumer.subscriptions.create("CommentChannel", {
 
   received(data) {
     console.log(data)
-    const html = `<p>${data.content.text}</p>`;
+    const html = `  <div class= "comment-items">
+
+    <div class="c-user-name"><${data.user.nickname}さん></div>
+
+    <div class="c-text"> ${data.content.text}</div>`;
     const messages = document.getElementById('comment-text');
     const newMessage = document.getElementById('comment_text');
     messages.insertAdjacentHTML('afterbegin', html);
     newMessage.value='';
-    location.reload(false);
   }
 });
